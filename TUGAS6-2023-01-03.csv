@@ -1,0 +1,140 @@
+id,title,description,preconditions,postconditions,tags,priority,severity,type,behavior,automation,status,is_flaky,layer,steps_type,steps_actions,steps_result,steps_data,milestone_id,milestone,suite_id,suite_parent_id,suite,suite_without_cases,parameters
+,,,,,,,,,,,,,,,,,,,,1,,Login,1
+,,,,,,,,,,,,,,,,,,,,2,,Logout,1
+,,,,,,,,,,,,,,,,,,,,3,,"Book Appointment",1
+1,"Login Success","Test login functionality","Already Registered","redirect to appointment page",,undefined,normal,functional,positive,is-not-automated,actual,no,e2e,classic,"1. access page
+2. Input username
+3. Input password
+4. Click login button
+","1. 
+2. Username is appear
+3. Password is appear
+4. Successfully logged in
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. John Doe
+3. ThisIsNotAPassword
+4. 
+",,,1,,Login,,
+2,"Failed login for valid credential without letter case",,"Already Registered","Redirect to appointment page",,undefined,normal,functional,negative,is-not-automated,actual,no,e2e,classic,"1. Access page
+2. Input username
+3. Input Password
+4. Click login
+","1. 
+2. Username is appear
+3. Username is appear
+4. Failed to login
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. John doe
+3. ThisIsNotAPassword
+4. 
+",,,1,,Login,,
+3,"Failed login for invalid username",,"Already registered","Redirect to appointment page",,undefined,normal,functional,negative,is-not-automated,actual,no,e2e,classic,"1. Access page
+2. Input username
+3. Input password
+4. Click login button
+","1. 
+2. username is appear
+3. username is appear
+4. Failed to login
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. John
+3. ThisIsNotAPassword
+4. 
+",,,1,,Login,,
+4,"Failed login for invalid password",,"Already Registered","Redirect to appointment page",,undefined,normal,functional,negative,is-not-automated,actual,no,e2e,classic,"1. Access page
+2. Input username
+3. Input password
+4. Click login button
+","1. 
+2. Username is appear
+3. Password is appear
+4. Failed to login
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. John Doe
+3. Thisisnotpassword!
+4. 
+",,,1,,Login,,
+5,"Failed login for null username",,"Already registered","Redirect to appointment page",,undefined,normal,functional,negative,is-not-automated,actual,no,e2e,classic,"1. Access page
+2. Input username
+3. Input password
+4. Click login button
+","1. 
+2. 
+3. password is appear
+4. Failed to login
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. 
+3. ThisIsNotAPassword
+4. 
+",,,1,,Login,,
+6,"Failed login for null password",,"Already registered","Redirect to appointment page",,undefined,normal,functional,negative,is-not-automated,actual,no,e2e,classic,"1. Access page
+2. Input username
+3. Input password
+4. Click login button
+","1. 
+2. username is appear
+3. 
+4. Failed to login
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. John Doe
+3. 
+4. 
+",,,1,,Login,,
+7,"Failed login for blank field",,"Already Registered","Redirect to appointment page",,undefined,normal,functional,negative,is-not-automated,actual,no,e2e,classic,"1. Access page
+2. Input username
+3. Input password
+4. Click login button
+","1. 
+2. 
+3. 
+4. Failed to login
+","1. https://katalon-demo-cura.herokuapp.com/profile.php#login
+2. 
+3. 
+4. 
+",,,1,,Login,,
+8,Logout,,"Already login","Redirect to dashboard page",,undefined,normal,functional,positive,is-not-automated,actual,no,e2e,classic,"1. Click menu
+2. Click logout
+","1. 
+2. Success to log out
+","1. 
+2. 
+",,,2,,Logout,,
+9,"Book Appointment",,"Already login","Appointment showing in the history",,undefined,normal,functional,positive,is-not-automated,actual,no,e2e,classic,"1. Select facility
+2. Click tick apply for hospital readmission
+3. Choose of healthcare program
+4. Fill visit date
+5. Fill comment
+6. Click button book appointment
+","1. 
+2. 
+3. 
+4. Visit date is appear
+5. Comment is appear
+6. Appointment has made and showing in the history
+","1. 
+2. 
+3. 
+4. 09/01/2023
+5. xxxxx
+6. 
+",,,3,,"Book Appointment",,
+10,"Failed to book appointment",,"Already login","Appointment showing in the history",,undefined,normal,functional,undefined,is-not-automated,actual,no,e2e,classic,"1. Select facility
+2. Click tick apply for hospital readmission
+3. Choose of healthcare program
+4. Fill visit date
+5. Fill comment
+6. Click button book appointment
+","1. 
+2. 
+3. 
+4. 
+5. 
+6. Appointment has not made and showing error message ""Please fill out""
+","1. 
+2. 
+3. 
+4. 
+5. xxxx
+6. 
+",,,3,,"Book Appointment",,
